@@ -1,0 +1,17 @@
+name: Calling Reusable Workflows
+on: 
+    workflow_disapatch:
+        inputs:
+            name:
+                description: "Input description"
+                type: string
+                default: "Ali"
+                required: false
+
+jobs:
+    calling-a-reusable-wf:
+        uses: org-course-one/Second-Repository/reusable.yaml@main
+        with:
+            name: ${{ inputs.name }}
+            secrets:
+                access-token: ${{ secrets.ACCESS_TOKEN }}
