@@ -10,7 +10,7 @@ on:
 
 jobs:
     calling-a-reusable-wf:
-        uses: org-course-one/Second-Repository/reusable.yaml@main
+        uses: org-course-one/course-code/reusable.yaml@main
         with:
             name: ${{ inputs.name }}
             secrets:
