@@ -1,6 +1,6 @@
 name: Calling Reusable Workflows
 on: 
-    workflow_disapatch:
+    workflow_dispatch:
         inputs:
             name:
                 description: "Input description"
