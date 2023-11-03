@@ -30,11 +30,11 @@ jobs:
                 echo '${{ steps.step-1.outputs.step-output }}'
                 echo '${{ steps.step-2.outputs.step-output }}' 
     node-matrix:
-        continue-on-error: ${{ matrix.experimental == true }}
+        needs: prepare-matrix
         strategy:
             matrix:
-                os: [ubuntu-latest, windows-latest]
-                node-version: [14, 15, 16]
+                os: ${{ fromJson(needs.prepare-matrix.outputs.matrix-arrays).os}}
+                node-version: ${{ fromJson(needs.prepare-matrix.outputs.matrix-arrays).node-version}}
         runs-on: ${{ matrix.os }}          
         steps:
             - run: node -v
