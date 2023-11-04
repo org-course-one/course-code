@@ -10,13 +10,13 @@ on:
 
 jobs:
     calling-a-reusable-wf:
-        uses: org-course-one/course-code/reusable.yaml@main
+        uses: org-course-one/Second-Repository/reusable.yaml@main
         with:
             name: ${{ inputs.name }}
             secrets:
                 access-token: ${{ secrets.ACCESS_TOKEN }}
     calling-a-reusable-wf-in-the-same-repo:
-        uses: ./.github/workflows/reusable-workflow.yaml
+        uses: ./.github\workflows\reusable-workflow.yaml
     using-reusable-wf-output:
         runs-on: ubuntu-latest
         needs: calling-a-reusable-wf-in-the-same-repo
