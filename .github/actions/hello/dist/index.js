@@ -30162,6 +30162,7 @@ const core = __nccwpck_require__(6474);
 const github = __nccwpck_require__(7341);
 
 try {
+    throw new Error("Some error message")
 
   core.debug('Debug Message');
   core.warning("Warning message");
